@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bira"
+ZSH_THEME="mgl"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -29,19 +29,23 @@ ZSH_THEME="bira"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gem heroku rails3 rake rvm)
+plugins=(git gem rails rake rvm bundler capistrano node nvm npm z)
 
-# RVM
+TERM=screen-256color
+
+# *VM
+export NVM_DIR="/home/yuriivolkov/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+[[ -s "/home/yuriivolkov/.gvm/scripts/gvm" ]] && source "/home/yuriivolkov/.gvm/scripts/gvm"
+
+PATH=$PATH:$HOME/.rvm/bin:$HOME/.clj/bin
 
 # gitamins
 [[ -s "$HOME/.gitamins/gitaminrc" ]] && . "$HOME/.gitamins/gitaminrc"
 
-
 source $ZSH/oh-my-zsh.sh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-TERM=screen-256color
-
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
