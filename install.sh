@@ -24,6 +24,14 @@ else
   cd $HOME && git clone git@github.com:robbyrussell/oh-my-zsh.git .oh-my-zsh
 fi
 
+if [ -e $HOME/.config/base16-shell ]
+then
+  echo "$HOME/.config/base16-shell exsts, skipping"
+else
+  echo "$HOME/.config/base16-shell does not exists, install"
+  cd $HOME && git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+fi
+
 for dotfile in $(ls -a | grep -v .git | grep -e '^\.[a-z]\+' | tr '\n' ' ')
 do
   if [ -e $HOME/$dotfile ]
