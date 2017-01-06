@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bira"
+ZSH_THEME="gnzh"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -39,7 +39,7 @@ export NVM_DIR="/home/yuriivolkov/.nvm"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 [[ -s "/home/yuriivolkov/.gvm/scripts/gvm" ]] && source "/home/yuriivolkov/.gvm/scripts/gvm"
 
-PATH=$PATH:$HOME/.rvm/bin:$HOME/.clj/bin
+PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.clj/bin
 
 # gitamins
 [[ -s "$HOME/.gitamins/gitaminrc" ]] && . "$HOME/.gitamins/gitaminrc"
