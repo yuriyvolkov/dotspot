@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="gnzh"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -29,23 +25,16 @@ ZSH_THEME="gnzh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gem rails rake rvm bundler capistrano node nvm npm z)
+plugins=(git z zsh-256color)
 
-TERM=screen-256color
-
-# *VM
-export NVM_DIR="/home/yuriivolkov/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-[[ -s "/home/yuriivolkov/.gvm/scripts/gvm" ]] && source "/home/yuriivolkov/.gvm/scripts/gvm"
-
-PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.clj/bin
-
-# gitamins
-[[ -s "$HOME/.gitamins/gitaminrc" ]] && . "$HOME/.gitamins/gitaminrc"
 
 source $ZSH/oh-my-zsh.sh
 
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+[[ -s "$HOME/.gitamins/gitaminrc" ]] && . "$HOME/.gitamins/gitaminrc"
+
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+    eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 
